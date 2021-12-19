@@ -1,5 +1,5 @@
 import React from "react";
-import { Col, Row, Button, Badge } from "react-bootstrap";
+import { Col, Row, Button, Badge, Card } from "react-bootstrap";
 import '../assets/css/styles.css'
 
 const styles = {
@@ -9,11 +9,11 @@ const styles = {
 
 export const Product = ({ item }) => {
 
-    const { title, image, price } = item;
+    const { title, image, price, description } = item;
 
     return (
         <Col xs={4}>
-            <Row>
+            {/* <Row>
                 <Col xs={8}>
                     <div style={styles}>{title}</div>
                 </Col>
@@ -28,7 +28,17 @@ export const Product = ({ item }) => {
                 <Col xs={12}>
                     <img className='img-product' alt='' src={image}></img>
                 </Col>
-            </Row>
+            </Row> */}
+            <Card style={{ width: '18rem', marginBottom: '20px' }}>
+                <Card.Img variant="top" src={image} className='img-product'/>
+                <Card.Body>
+                    <Card.Title>{title}</Card.Title>
+                    <Card.Text>
+                        {description}
+                    </Card.Text>
+                    <Button variant="primary">Añadir</Button>
+                </Card.Body>
+            </Card>
         </Col>
     )
 }
