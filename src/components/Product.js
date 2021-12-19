@@ -1,6 +1,7 @@
 import React from "react";
-import { Col, Row, Button, Badge, Card } from "react-bootstrap";
+import { Col, Button, Card } from "react-bootstrap";
 import '../assets/css/styles.css'
+import { DescriptionModal } from "./DescriptionModal";
 
 const styles = {
     fontSize: '15px',
@@ -37,6 +38,7 @@ export const Product = ({ item }) => {
                         {description}
                     </Card.Text>
                     <Button variant="primary">Añadir</Button>
+                    <DescriptionModal title={title} description={description}/>
                 </Card.Body>
             </Card>
         </Col>
