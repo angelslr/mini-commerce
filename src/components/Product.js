@@ -2,6 +2,7 @@ import React from "react";
 import { Col, Button, Card } from "react-bootstrap";
 import '../assets/css/styles.css'
 import { DescriptionModal } from "./DescriptionModal";
+import { Rating } from "./Rating";
 
 const styles = {
     fontSize: '15px',
@@ -10,7 +11,7 @@ const styles = {
 
 export const Product = ({ item }) => {
 
-    const { title, image, price, description } = item;
+    const { title, image, price, description, rating } = item;
 
     return (
         <Col xs={4}>
@@ -20,6 +21,9 @@ export const Product = ({ item }) => {
                     <Card.Title>{title}</Card.Title>
                     <Card.Text>
                         Precio: ${price}
+                    </Card.Text>
+                    <Card.Text>
+                        Rating: <Rating rating={rating}/>
                     </Card.Text>
                     <DescriptionModal title={title} description={description}/>
                 </Card.Body>
