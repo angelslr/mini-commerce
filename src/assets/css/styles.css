@@ -1,0 +1,4 @@
+.img-product {
+    object-fit: contain;
+    max-height: 180px;
+}
