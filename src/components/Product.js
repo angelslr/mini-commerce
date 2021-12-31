@@ -14,7 +14,7 @@ export const Product = ({ item }) => {
 
     const { title, image, price, description, rating } = item;
 
-    const addProductToCart = (title, price, category) => {
+    const addProductToCart = ({title, price, category}) => {
         db.cart.add({
             title: title,
             price: price,
